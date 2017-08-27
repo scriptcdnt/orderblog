@@ -4018,7 +4018,7 @@ text-decoration: none;
 	width: 100%;
 }
 .comfbtitle {
-	width: 100%;
+	width: calc(100% - 5px);
 	height: 36px;
 	line-height: 36px;
 	padding: 0 10px;
@@ -4026,6 +4026,8 @@ text-decoration: none;
 	font-size: 16px;
 	color: #fff;
 	display: block;
+	clear: both;
+	margin-bottom: 10px;
 }
 .related-post-item-summary {
     display: none;
@@ -4079,9 +4081,51 @@ text-decoration: none;
     border-radius: 6px;
     margin-right: 3px;
 }
+
 //]]></b:skin>
 <b:if cond='data:blog.pageType == &quot;item&quot;'>
 <style type='text/css'>
+  .tombol-berbagi-arlina a {
+	-moz-transition: color .2s linear , background-color .2s linear;
+-o-transition: color .2s linear , background-color .2s linear;
+-webkit-transition: color .2s linear , background-color .2s linear;
+transition: color .2s linear , background-color .2s linear;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+color: #fff;
+display: block;
+font-size: 15px;
+font-weight: 600;
+height: 40px;
+line-height: 40px;
+text-align: center;
+	margin-bottom: 7px;
+}
+.tombol-berbagi-fb {
+	background: #3468af;
+}
+.tombol-berbagi-tw {
+    background: #4ec0f0;
+}
+  #whitepaceads {
+	min-height: 300px;
+}
+#share-postid {
+    width: 10%;
+    display: inline-block;
+    float: left;
+	position: sticky;
+	top: 0px;
+}
+#main-postke {
+    display: inline-block;
+    width: 89%;
+    float: left;
+}
 .post-author img {
     float: left;
     margin-right: 8px;
@@ -4091,25 +4135,15 @@ text-decoration: none;
 }
 div#main {
     width: 100%;
-    margin-bottom: 200px;
 }
 #post-wrapper {
     float: left;
-    width: 90%;
 	padding-right: 20px;
-}
-#share-postid {
-    width: 10%;
-    float: left;
 }
 #postid {
     display: block;
     margin-left: 90px;
     margin-right: 40px;
-}
-#share-postid {
-    width: 90px;
-    float: left;
 }
 @media only screen and (max-width:600px) {
 .post-info, .post h1.entry-title {
@@ -5396,11 +5430,7 @@ head.appendChild(script);
       <div id='content-wrapper'>
 
         <div id='mywrapper'>
- <b:if cond='data:blog.pageType == &quot;item&quot;'>
-          <div id='share-postid'>
-shareyus
-  </div>
-          </b:if>
+
           <div id='post-wrapper'>
             <div class='post-container'>
             
@@ -5913,7 +5943,28 @@ shareyus
   <div class='clear'/>
 </b:includable>
                    <b:includable id='post' var='post'>
-  <div class='post hentry uncustomized-post-template' itemprop='blogPost' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
+
+ <b:if cond='data:blog.pageType == &quot;item&quot;'>
+          <div id='share-postid'>
+
+
+
+<div class='tombol-berbagi-arlina'>
+<div class='tombol-berbagi-arlina-fb'>
+<a class='tombol-berbagi-fb' expr:href='&quot;http://www.facebook.com/sharer.php?u=&quot; + data:post.url + &quot;&amp;title=&quot; + data:post.title' rel='nofollow' target='_blank'><i class="fa fa-facebook" aria-hidden="true"></i>
+ share</a>
+</div>
+<div class='tombol-berbagi-arlina-tw'>
+<a class='tombol-berbagi-tw' expr:data-text='data:post.title' expr:data-url='data:post.url' href='http://twitter.com/share' rel='nofollow' target='_blank'><i class="fa fa-twitter" aria-hidden="true"></i>
+ tweet</a>
+</div>
+</div>
+
+
+
+  </div>
+          </b:if>
+  <div id='main-postke' class='post hentry uncustomized-post-template' itemprop='blogPost' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
     <b:if cond='data:post.firstImageUrl'>
       <meta expr:content='data:post.firstImageUrl' itemprop='image_url'/>
     </b:if>
@@ -5996,6 +6047,7 @@ shareyus
       </div>
 
 <b:else/>
+
 <div id='post-id'>
 
 
@@ -6009,20 +6061,7 @@ shareyus
       </h3>
     </b:if>
 <data:post.body/>
-  </div>
 
-
-</b:if>
-
-
-      <div style='clear: both;'/> <!-- clear for photos floats -->
-    </div>
-
-    <b:if cond='data:post.hasJumpLink'>
-      <div class='jump-link'>
-        <a expr:href='data:post.url + &quot;#more&quot;' expr:title='data:post.title'><data:post.jumpText/></a>
-      </div>
-    </b:if>
 <b:if cond='data:blog.pageType != &quot;index&quot;'>
     <div class='post-footer-ye'>
 
@@ -6103,7 +6142,21 @@ shareyus
 			  </script>
 			<!-- Related Post Widget End -->
   </div>
+  <div id='whitepaceads'/>
+    </b:if>
+  </div>
 
+
+</b:if>
+
+
+      <div style='clear: both;'/> <!-- clear for photos floats -->
+    </div>
+
+    <b:if cond='data:post.hasJumpLink'>
+      <div class='jump-link'>
+        <a expr:href='data:post.url + &quot;#more&quot;' expr:title='data:post.title'><data:post.jumpText/></a>
+      </div>
     </b:if>
   </div>
 </b:includable>
