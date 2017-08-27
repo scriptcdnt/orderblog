@@ -9,6 +9,7 @@
     <meta content='text/html;charset=UTF-8' http-equiv='Content-Type'/>
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'/>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,500,700' rel='stylesheet'/>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" /> 
 <link href='https://1.bp.blogspot.com/-2da59Mk-dIM/WZhZpX5WgpI/AAAAAAAAAoE/1gkVyzBRg8UugUfY04jyp5zHw2lIdcJiwCLcBGAs/s1600/favicon.png' rel='shortcut icon' type='image/x-icon'/>
 <link href='https://1.bp.blogspot.com/-2da59Mk-dIM/WZhZpX5WgpI/AAAAAAAAAoE/1gkVyzBRg8UugUfY04jyp5zHw2lIdcJiwCLcBGAs/s1600/favicon.png' rel='icon' type='image/x-icon'/>
     <meta content='#de7cff' name='theme-color'/>
@@ -564,7 +565,7 @@ padding:0;
 
 .post-body {
 color: #777777;
-font-family: 'Roboto', sans-serif;
+font-family: 'Lato', sans-serif;
 font-size: 15px;
 line-height: 1.86em;
 font-weight: 400;
@@ -3499,6 +3500,7 @@ ul.mbt-pager .fa-chevron-right {
 }
 div#comments {
     margin-top: 50px;
+	display: none;
 }
 .quickedit {
     display: none;
@@ -4050,9 +4052,47 @@ text-decoration: none;
 #related-post h4 {
     display: none;
 }
+.post-footer-ye {
+    margin-bottom: 20px;
+    padding: 20px 0 36px;
+    border-top: 1px solid #dadade;
+    border-bottom: 1px solid #dadade;
+    margin-top: 20px;
+	font-family: 'Lato', sans-serif;
+}
+.post-footer-ye .post-labels, .post-footer-ye post-author {
+	width: 50%;
+	display: inline-block;
+	float: left;
+}
+.title-label1 {
+    display: block;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+	margin-bottom: 5px;
+}
+.des-label1 a {
+    background: #AAAAB5;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 6px;
+    margin-right: 3px;
+}
 //]]></b:skin>
 <b:if cond='data:blog.pageType == &quot;item&quot;'>
 <style type='text/css'>
+.post-author img {
+    float: left;
+    margin-right: 8px;
+}
+#blog-pager {
+    display: none;
+}
+div#main {
+    width: 100%;
+    margin-bottom: 200px;
+}
 #post-wrapper {
     float: left;
     width: 90%;
@@ -5984,11 +6024,23 @@ shareyus
       </div>
     </b:if>
 <b:if cond='data:blog.pageType != &quot;index&quot;'>
-    <div class='post-footer'>
-    <div class='post-footer-line post-footer-line-1'>
+    <div class='post-footer-ye'>
+
+      <span class='post-labels'>
+        <b:if cond='data:top.showPostLabels and data:post.labels'>
+          <span class='title-label1'>keyword di konten ini</span>
+	<span class='des-label1'>
+          <b:loop values='data:post.labels' var='label'>
+            <a expr:href='data:label.url' rel='tag'><data:label.name/></a><b:if cond='not data:label.isLast'>,</b:if>
+          </b:loop>
+          </span>
+        </b:if>
+      </span>
+
+
       <span class='post-author vcard'>
         <b:if cond='data:top.showAuthor'>
-          <data:top.authorLabel/>
+          <img src='https://2.bp.blogspot.com/-2zc7PljyHqw/WZz3yJDjZrI/AAAAAAAAAqY/MAoeb7HXbEMnnlsaFq0rIM8MNrEQeqRuACLcBGAs/s1600/ad.png' />
             <b:if cond='data:post.authorProfileUrl'>
               <span class='fn' itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'>
                 <meta expr:content='data:post.authorProfileUrl' itemprop='url'/>
@@ -6004,91 +6056,7 @@ shareyus
         </b:if>
       </span>
 
-      <span class='post-timestamp'>
-        <b:if cond='data:top.showTimestamp'>
-          <data:top.timestampLabel/>
-          <b:if cond='data:post.url'>
-            <meta expr:content='data:post.url.canonical' itemprop='url'/>
-            <a class='timestamp-link' expr:href='data:post.url' rel='bookmark' title='permanent link'><abbr class='published' expr:title='data:post.timestampISO8601' itemprop='datePublished'><data:post.timestamp/></abbr></a>
-          </b:if>
-        </b:if>
-      </span>
 
-      <span class='reaction-buttons'>
-        <b:if cond='data:top.showReactions'>
-          <table border='0' cellpadding='0' cellspacing='0' width='100%'><tr>
-            <td class='reactions-label-cell' nowrap='nowrap' valign='top' width='1%'>
-              <span class='reactions-label'>
-              <data:top.reactionsLabel/></span>&#160;</td>
-            <td><iframe allowtransparency='true' class='reactions-iframe' expr:src='data:post.reactionsUrl' frameborder='0' name='reactions' scrolling='no'/></td>
-           </tr></table>
-        </b:if>
-      </span>
-
-      <span class='post-comment-link'>
-        <b:include cond='data:blog.pageType not in {&quot;item&quot;,&quot;static_page&quot;}                          and data:post.allowComments' data='post' name='comment_count_picker'/>
-      </span>
-
-       <!-- backlinks -->
-       <span class='post-backlinks post-comment-link'>
-         <b:if cond='data:blog.pageType not in {&quot;item&quot;,&quot;static_page&quot;}                      and data:post.showBacklinks'>
-           <a class='comment-link' expr:href='data:post.url + &quot;#links&quot;'><data:top.backlinkLabel/></a>
-         </b:if>
-       </span>
-
-      <span class='post-icons'>
-        <!-- email post links -->
-        <b:if cond='data:post.emailPostUrl'>
-          <span class='item-action'>
-          <a expr:href='data:post.emailPostUrl' expr:title='data:top.emailPostMsg'>
-            <img alt='' class='icon-action' height='13' src='https://resources.blogblog.com/img/icon18_email.gif' width='18'/>
-          </a>
-          </span>
-        </b:if>
-
-        <!-- quickedit pencil -->
-        <b:include data='post' name='postQuickEdit'/>
-      </span>
-
-      <!-- share buttons -->
-      <div class='post-share-buttons goog-inline-block'>
-        <b:include cond='data:post.sharePostUrl' data='post' name='shareButtons'/>
-      </div>
-
-      </div>
-
-      <div class='post-footer-line post-footer-line-2'>
-      <span class='post-labels'>
-        <b:if cond='data:top.showPostLabels and data:post.labels'>
-          <data:postLabelsLabel/>
-          <b:loop values='data:post.labels' var='label'>
-            <a expr:href='data:label.url' rel='tag'><data:label.name/></a><b:if cond='not data:label.isLast'>,</b:if>
-          </b:loop>
-        </b:if>
-      </span>
-      </div>
-
-      <div class='post-footer-line post-footer-line-3'>
-      <span class='post-location'>
-        <b:if cond='data:top.showLocation and data:post.location'>
-          <data:postLocationLabel/>
-          <a expr:href='data:post.location.mapsUrl' target='_blank'><data:post.location.name/></a>
-        </b:if>
-      </span>
-      </div>
-      <b:if cond='data:post.authorAboutMe'>
-        <div class='author-profile' itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'>
-          <b:if cond='data:post.authorPhoto.url'>
-            <img expr:src='data:post.authorPhoto.url' itemprop='image' width='50px'/>
-          </b:if>
-          <div>
-            <a class='g-profile' expr:href='data:post.authorProfileUrl' itemprop='url' rel='author' title='author profile'>
-              <span itemprop='name'><data:post.author/></span>
-            </a>
-          </div>
-          <span itemprop='description'><data:post.authorAboutMe/></span>
-        </div>
-      </b:if>
     </div>
 <div id='fb-comment'>
   <span class='comfbtitle'>Comments</span>
