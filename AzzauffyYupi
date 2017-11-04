@@ -58,7 +58,7 @@
 <meta content='id_ID' property='og:locale'/>
 <meta content='Indonesia' name='geo.placename'/>
 <meta content='id' name='geo.country'/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css' rel='stylesheet'/>
     <b:skin version='1.1.0'><![CDATA[/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 /*
 <!-- Constants -->
@@ -208,7 +208,7 @@
 
 <Group description="Widths">
   <Variable name="sidebar.width" description="Sidebar width" type="length" min="100px" max="1000px" default="320px"  value="310px"/>
-  <Variable name="feed.width" description="Content width" type="length" min="860px" max="1440px" default="1280px"  value="1316px"/>
+  <Variable name="feed.width" description="Content width" type="length" min="600px" max="1000px" default="980px"  value="690px"/>
 </Group>
  */
 
@@ -882,22 +882,7 @@ html[dir=rtl] .rtl-reversible-icon {
       -ms-flex-order: 2;
           order: 2;
 }
-.centered-top-container.sticky {
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
-  width: auto;
-  z-index: 8;
-  -webkit-transition-property: opacity, -webkit-transform;
-  transition-property: opacity, -webkit-transform;
-  transition-property: transform, opacity;
-  transition-property: transform, opacity, -webkit-transform;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
-  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
+
 
 .centered-top-placeholder {
   display: none;
@@ -912,17 +897,6 @@ html[dir=rtl] .rtl-reversible-icon {
   display: none;
 }
 
-.centered-top-container.sticky .Header .replaced h1 {
-  display: block;
-}
-
-.centered-top-container.sticky .Header .header-widget {
-  background: none;
-}
-
-.centered-top-container.sticky .Header .header-image-wrapper {
-  display: none;
-}
 
 .centered-top-container img,
 .centered-top-placeholder img {
@@ -1744,7 +1718,6 @@ body.sidebar-visible .all-container {
 
 .Blog {
   padding: 0;
-  padding-$startSide: 136px;
 }
 
 .main_content_container {
@@ -1825,9 +1798,12 @@ body.search-view .centered-top.search-focused .blog-name {
 }
 
 .widget.Header img {
-  max-width: 100%;
+    max-width: 100%;
+    width: 60%;
 }
-
+#header {
+    text-align: center;
+}
 .blog-name {
   -webkit-box-flex: 1;
   -webkit-flex: 1 1 auto;
@@ -2162,8 +2138,8 @@ html[dir=ltr] .search form {
   -webkit-order: 1;
       -ms-flex-order: 1;
           order: 1;
-  margin-$endSide: 76px;
-  max-width: $(feed.width - 604px);
+  margin-$endSide: 5px;
+  max-width: $(feed.width);
   width: 100%;
 }
 
@@ -2258,7 +2234,7 @@ body.feed-view .feed-message + .post-outer-container {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-$endSide: 136px;
+  margin-$endSide: 15px;
   overflow: hidden;
   -webkit-box-ordinal-group: 3;
   -webkit-order: 2;
@@ -3626,11 +3602,10 @@ body.variant-rockpool_deep_orange .post-filter-message {
     width: 70%;
     float: left;
 }
-nav {
-  margin-bottom: 30px; }
 
 nav#nav-main {
-  padding: 10px 0; }
+	padding: 10px 0;
+}
  nav#nav-main ul {
     list-style-type: none;
     padding: 0;
@@ -4200,7 +4175,7 @@ $(document).ready(function(){
 </form>
 </div>
 </div>
-      <div class='centered-top-placeholder'/>
+      
       <header class='centered-top-container' role='banner'>
         <div class='centered-top'>
           <b:class cond='data:view.isSearch and data:view.search.query' name='search-focused'/>
@@ -4211,13 +4186,13 @@ $(document).ready(function(){
                 <b:section id='header' name='Header' showaddelement='true'>
                   <b:widget id='Header1' locked='true' title='5 BIG HEADER (Header)' type='Header' version='2' visible='true'>
                     <b:widget-settings>
-                      <b:widget-setting name='displayUrl'>http://1.bp.blogspot.com/-ylNwIASBDmM/Wc4qfjOy_cI/AAAAAAAAAQE/XAkP-dOg9D0kTmW_IiuSI-f_KraeZhDmACK4BGAYYCw/s1600/2.jpg</b:widget-setting>
-                      <b:widget-setting name='displayHeight'>236</b:widget-setting>
-                      <b:widget-setting name='sectionWidth'>395</b:widget-setting>
+                      <b:widget-setting name='displayUrl'>http://3.bp.blogspot.com/-prPM1a1rqww/Wf1wvl4h4QI/AAAAAAAAImE/tUnZfJWXwLweRQjbQjdC0pfyFqIqPM1rgCK4BGAYYCw/s1600/header%2Bfix.png</b:widget-setting>
+                      <b:widget-setting name='displayHeight'>90</b:widget-setting>
+                      <b:widget-setting name='sectionWidth'>790</b:widget-setting>
                       <b:widget-setting name='useImage'>true</b:widget-setting>
                       <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
-                      <b:widget-setting name='imagePlacement'>BEFORE_DESCRIPTION</b:widget-setting>
-                      <b:widget-setting name='displayWidth'>640</b:widget-setting>
+                      <b:widget-setting name='imagePlacement'>REPLACE</b:widget-setting>
+                      <b:widget-setting name='displayWidth'>497</b:widget-setting>
                     </b:widget-settings>
                     <b:includable id='main' var='this'>
     <div class='header-widget'>
