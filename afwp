@@ -510,23 +510,25 @@ color:#646464;
 }
 /* CONTENT WRAPPER */
 #content-wrapper {
-background-color:transparent;
-margin: 0 auto;
-word-wrap:break-word;
-max-width: 1140px;
-width:100%;
-z-index:300;
-position:relative;
+	background-color:transparent;
+	margin: 0 auto;
+	word-wrap:break-word;
+	max-width: 1140px;
+	width:100%;
+	z-index:300;
+	position:relative;
+	border: 1px solid #e6e6e6;
+	display: inline-block;
 }
 .separator a {
-margin-left: 0!important;
-margin-right: 0!important;
+	margin-left: 0!important;
+	margin-right: 0!important;
 }
 .largebanner {
-background:#fff;
-border-right:1px solid #e5e5e5;
-border-bottom:1px solid #e5e5e5;
-border-left:1px solid #e5e5e5;
+	background:#fff;
+	border-right:1px solid #e5e5e5;
+	border-bottom:1px solid #e5e5e5;
+	border-left:1px solid #e5e5e5;
 }
 .largebanner .widget {
 padding:15px 14px;
@@ -545,12 +547,11 @@ width:100%;
 margin: 50px auto 0;
 }
 #post-wrapper {
-float:left;
-width:100%;
-
-position:relative;
-z-index:300;
-
+	float:left;
+	width:100%;
+	position:relative;
+	z-index:300;
+	border-right: 1px solid #e6e6e6;
 }
 .post-container {
 padding:15px 0px 0 0;
@@ -560,12 +561,6 @@ padding:15px 0px 0 0;
 .breadcrumbs > span:last-child {background: none repeat scroll 0 0 transparent;color: #333333;}
 .breadcrumbs a {color: #333333;}
 
-.post {
-background:#ffffff;
-padding:0 50px 40px 50px;
-border-top: 1px solid #eee;
-  border-right: 1px solid #eee;
-}
 
 
 .post-body {
@@ -682,8 +677,7 @@ display:none;
 /* SIDEBAR WRAPPER */
 #sidebar-wrapper {
 float: left;
-  width: 350px;
-  max-width: 350px;
+  width: 34%;
   margin: 15px 0px 20px 0;
 }
 
@@ -716,10 +710,9 @@ position:relative;
 
 
 .sidebar .widget {
-margin: 0 0 1px;
-background: #fff;
-padding: 20px 25px;
-border-top:1px solid #eee;
+	margin: 0 0 1px;
+	background: #fff;
+	padding: 20px 25px;
 }
 .sidebar ul, .sidebar ol {
 list-style-type:none;
@@ -1314,11 +1307,11 @@ padding-right:0px !important;
 /*-------sidebar----------------*/
 
 div#main {
-width: 100%;
+	width: 100%;
 }
 div#mywrapper {
-float: left;
-width: 780px;
+	float: left;
+	width: 66%;
 }
 
 .tab-widget-menu ul, .tab-widget-menu li {
@@ -3195,20 +3188,18 @@ background: #000;
   content: "";
 }
 
-
-
-.sidebar .widget h2{margin-top: 0;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 14px;
-    padding-left: 18px;
-    padding-right: 18px;
-    line-height: 17px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    clear: both;
-    background: rgba(255, 255, 255, 0.81);
-    text-align: center;
+.sidebar .widget h2 {
+	font-size: 18px;
+	background-color: #1277cb;
+	padding: 2px 15px 2px 15px;
+	line-height: 30px;
+	font-weight: bold;
+	color: #fff;
+	border-radius: 3px;
+	position: relative;
+	display: inline-table;
+	vertical-align: middle;
+	top: -2px;
 }
 
 .rapper {
@@ -3466,38 +3457,6 @@ a.read-more i {
 }
 
 
-.sidebar .widget h2:before {
-  content: "";
-    position: absolute;
-    left: 18px;
-    top: 10px;
-    bottom: 10px;
-    right: 18px;
-    height: auto;
-    z-index: 0;
-    /* border-left: 2px solid #ddd; */
-    border: 2px solid;
-    /* width: 50%; */
-	border-color: #D5492E;
-
-}
-.sidebar .widget h2:after {
-    bottom: -4px;
-    left: 50%;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    z-index: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-    content: "";
-    border-color: rgba(136, 183, 213, 0);
-    border-top-color: #D5492E;
-    border-width: 8px;
-    margin-left: -8px;
-
-}
 span.post-da {
 position:relative;}
 
@@ -3788,15 +3747,7 @@ div#comments {
 <b:if cond='data:blog.pageType == &quot;index&quot;'>
 <style type='text/css'>
 @media screen and (min-width:740px) {
-  .post {
-    width: 50%;
-    float: left;
-    display: inline-block;
-}
 
-}
-.rm-button-wrap {
-    text-align: center;
 }
 
 .authorprofile {
@@ -3804,10 +3755,6 @@ div#comments {
     display: block;
     text-align: center;
 }
-.post-snippet {
-    text-align: center;
-}
-
 
 .hi-icon-wrap {
     text-align: center;
@@ -3817,11 +3764,11 @@ div#comments {
 }
 .post img.thumbnail-post {
     width: 100%;
-    height: 250px;
+	max-width: 238px;
+	float: left;
+	margin-right: 20px;
 }
-.post-heading h2 {
-    text-align: center;
-}
+
 
 
 </style>
@@ -6048,52 +5995,6 @@ Sorry the page you are looking for doesn&#39;t exists!
            
             <div class='clear'/>
             <b:section class='sidebar section' id='sidebar' preferred='yes'>
-              <b:widget id='HTML1' locked='false' title='About Me' type='HTML'>
-                <b:widget-settings>
-                  <b:widget-setting name='content'>&lt;div id=&#39;aboutme&#39;&gt;
-&lt;span class=&#39;imgam&#39;&gt;
-&lt;img src=&quot;https://1.bp.blogspot.com/-lv3B0cB9XOE/WXIfk97m_VI/AAAAAAAAAW0/A-BL16wbnF0Zyh9COOwIrVc40kvNlD6kACLcBGAs/s1600/profile%2Bpicture%2Bnovi.jpg&quot; alt=&quot;about me&quot; title=&quot;about me&quot; /&gt;
-&lt;/span&gt;
-&lt;span class=&#39;desam&#39;&gt;
-perkenalkan saya adalah. lorem ipsum dolor sit amet dan lorem ipsum  lorem ipsum dolor sit amet dan lorem ipsum  lorem ipsum dolor sit amet dan lorem ipsum  lorem ipsum dolor sit amet dan lorem ipsum  lorem ipsum dolor sit amet dan lorem ipsum  lorem ipsum dolor sit amet dan lorem ipsum  lorem ipsum dolor sit amet dan lorem ipsum 
-&lt;/span&gt;
-&lt;span class=&#39;sosmedam&#39;&gt;
-&lt;span class=&#39;titlesosmedam&#39;&gt;Follow me on&lt;/span&gt;
-
-&lt;div class=&#39;social-container&#39;&gt;
-
-&lt;ul class=&#39;social text-center&#39;&gt;
-&lt;li class=&#39;updown-wrap&#39;&gt;&lt;a class=&#39;updown-inner collections-icon-twitter hint--top  hint--bounce&#39; data-hint=&#39;Twitter&#39; href=&#39;https://twitter.com/novitrimurti&#39; target=&#39;_blank&#39;&gt;&lt;i class=&#39;fa fa-twitter&#39;/&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li class=&#39;updown-wrap&#39;&gt;&lt;a class=&#39;updown-inner collections-icon-google-plus hint--top  hint--bounce&#39; data-hint=&#39;Novi Ardiani&#39; href=&#39;https://plus.google.com/u/0/+NoviArdiani&#39; target=&#39;_blank&#39;&gt;&lt;i class=&#39;fa fa-google-plus&#39;/&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li class=&#39;updown-wrap&#39;&gt;&lt;a class=&#39;updown-inner collections-icon-facebook hint--top  hint--bounce&#39; data-hint=&#39;Novi Ardiani&#39; href=&#39;https://www.facebook.com/novi.ardiani.144&#39; target=&#39;_blank&#39;&gt;&lt;i class=&#39;fa fa-facebook&#39;/&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li class=&#39;updown-wrap&#39;&gt;&lt;a class=&#39;updown-inner collections-icon-pinterest hint--top  hint--bounce&#39; data-hint=&#39;Novi Ardiani&#39; href=&#39;https://path.com/51af4710b14bd2b8e43630de&#39; target=&#39;_blank&#39;&gt;&lt;i class=&#39;fa fa-pinterest&#39;/&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li class=&#39;updown-wrap&#39;&gt;&lt;a class=&#39;updown-inner collections-icon-instagram hint--top  hint--bounce&#39; data-hint=&#39;noviardiani&#39; href=&#39;https://www.instagram.com/noviardiani/?hl=en&#39; target=&#39;_blank&#39;&gt;&lt;i class=&#39;fa fa-instagram&#39;/&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li class=&#39;updown-wrap&#39;&gt;&lt;a class=&#39;updown-inner collections-icon-linkedin hint--top  hint--bounce&#39; data-hint=&#39;Novi Ardiani&#39; href=&#39;https://www.linkedin.com/in/novi-ardiani-38222769/&#39; target=&#39;_blank&#39;&gt;&lt;i class=&#39;fa fa-linkedin&#39;/&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li class=&#39;updown-wrap&#39;&gt;&lt;a class=&#39;updown-inner collections-icon-youtube hint--top  hint--bounce&#39; data-hint=&#39;Youtube&#39; href=&#39;https://www.youtube.com/channel/UCe3ljy89AhhOXl6HXRZ9yBg&#39; target=&#39;_blank&#39;&gt;&lt;i class=&#39;fa fa-youtube-play&#39;/&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;	
-
-
-&lt;/span&gt;
-
-&lt;span class=&#39;banneremail&#39;&gt;
-&lt;img src=&#39;https://1.bp.blogspot.com/-w8GbpZd0IgM/WXKWAK6vcoI/AAAAAAAAAXE/-4pTwG0QSOgG4NVU8vRsnhEdpI1Rr9O6QCLcBGAs/s1600/banner.png&#39; /&gt;
-&lt;/span&gt;
-&lt;/div&gt;</b:widget-setting>
-                </b:widget-settings>
-                <b:includable id='main'>
-  <!-- only display title if it's non-empty -->
-  <b:if cond='data:title != &quot;&quot;'>
-    <h2 class='title'><data:title/></h2>
-  </b:if>
-  <div class='widget-content'>
-    <data:content/>
-  </div>
-
-  <b:include name='quickedit'/>
-</b:includable>
-              </b:widget>
               <b:widget id='BlogArchive1' locked='false' title='Arsip Blog' type='BlogArchive'>
                 <b:widget-settings>
                   <b:widget-setting name='showStyle'>HIERARCHY</b:widget-setting>
@@ -7203,8 +7104,18 @@ $('.post-entry').magnificPopup({
 $('.post-entry img').each(function(){
         $(this).parent().addClass("postimage");
 });
+
+ 
+
+
 });
 //]]>
 </script>
+
+
+
+
+
+
   </body>
 </html>
