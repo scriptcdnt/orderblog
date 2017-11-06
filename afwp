@@ -255,6 +255,7 @@ body#layout #header {
 }
 body#layout #header-wrapper {
 	width: 100%;
+	float: none;
 }
 body#layout .panel {
 float:left;
@@ -3713,6 +3714,9 @@ div#comments {
 #search-button-right a {
 	color: #fff;
 }
+#ads-top {
+    text-align: center;
+}
 //]]></b:skin>
 <b:if cond='data:blog.pageType == &quot;item&quot;'>
 <style type='text/css'>
@@ -4914,7 +4918,24 @@ user is not using shrink to fit then we expand the header.
 
 
 <div class='main-content-wrapper'>
-  <b:section class='ads-top' id='ads-top' showaddelement='true'/>
+  <b:section class='ads-top' id='ads-top' showaddelement='true'>
+    <b:widget id='HTML3' locked='false' title='' type='HTML'>
+      <b:widget-settings>
+        <b:widget-setting name='content'><![CDATA[<img src='https://3.bp.blogspot.com/-bVWEDFFaMDU/WgAuykbniPI/AAAAAAAAIm8/_uUd-U1nPPQ9uIvE420Si6GAYvo9WcX2gCLcBGAs/s1600/iklan.png' />]]></b:widget-setting>
+      </b:widget-settings>
+      <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+  <b:include name='quickedit'/>
+</b:includable>
+    </b:widget>
+  </b:section>
       <div id='content-wrapper'>
 
 
@@ -7182,18 +7203,8 @@ $('.post-entry').magnificPopup({
 $('.post-entry img').each(function(){
         $(this).parent().addClass("postimage");
 });
-
- 
-
-
 });
 //]]>
 </script>
-
-
-
-
-
-
   </body>
 </html>
